@@ -1,5 +1,3 @@
-import 'three.js';
-
 export const mimeType = 'application/vnd.ms-pki.stl';
 
 const LITTLE_ENDIAN = true;
@@ -65,15 +63,15 @@ function geometryToData(geometry, binary) {
 }
 
 export function fromGeometry(geometry, matrix, binary = true) {
-  if (geometry instanceof THREE.BufferGeometry) {
+  if (geometry.type === 'BufferGeometry') {
     geometry = new THREE.Geometry().fromBufferGeometry(geometry);
-  } else if (geometry instanceof THREE.Geometry) {
+  } else if (geometry.type === 'Geometry') {
     geometry = geometry.clone();
   } else {
     throw new Error('Geometry is not an instance of BufferGeometry or Geometry');
   }
 
-  if (matrix instanceof THREE.Matrix4) {
+  if (matrix) {
     geometry.applyMatrix(matrix);
   }
 

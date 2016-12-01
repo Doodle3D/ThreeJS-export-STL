@@ -1,4 +1,4 @@
-import 'three.js';
+import 'mrdoob/three.js';
 import { saveAs } from 'file-saver';
 import { fromMesh, mimeType } from 'src/index.js';
 
@@ -9,7 +9,7 @@ const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1
 
 const renderer = new THREE.WebGLRenderer({ canvas });
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
+const geometry = new THREE.BoxGeometry(1, 1, 1).clone();
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);

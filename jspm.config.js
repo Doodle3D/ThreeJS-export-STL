@@ -10,7 +10,8 @@ SystemJS.config({
   devConfig: {
     "map": {
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.17",
-      "file-saver": "npm:file-saver@1.3.3"
+      "file-saver": "npm:file-saver@1.3.3",
+      "mrdoob/three.js": "github:mrdoob/three.js@master"
     }
   },
   transpiler: "plugin-babel",
@@ -32,8 +33,6 @@ SystemJS.config({
     "npm:*.json",
     "github:*/*.json"
   ],
-  map: {
-    "three.js": "github:mrdoob/three.js@master"
-  },
+  map: {},
   packages: {}
 });
