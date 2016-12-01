@@ -1,0 +1,56 @@
+{
+  "name": "threejs-export-stl",
+  "version": "0.0.1",
+  "description": "ThreeJS STL Exporter",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "postinstall": "jspm install",
+    "build": "babel src --out-dir lib"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "format": "esm",
+  "directories": {
+    "lib": "src"
+  },
+  "keywords": [
+    "three",
+    "threejs",
+    "stl",
+    "export"
+  ],
+  "author": "casper@doodle3d",
+  "license": "ISC",
+  "dependencies": {
+    "jspm": "^0.17.0-beta.32",
+    "three": "^0.82.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0"
+  },
+  "jspm": {
+    "name": "threejs-export-stl",
+    "main": "index.js",
+    "directories": {
+      "lib": "src"
+    },
+    "dependencies": {
+      "three.js": "github:mrdoob/three.js@master"
+    },
+    "devDependencies": {
+      "file-saver": "npm:file-saver@^1.3.3",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.17"
+    },
+    "overrides": {
+      "github:mrdoob/three.js@master": {
+        "format": "global"
+      }
+    }
+  }
+}
