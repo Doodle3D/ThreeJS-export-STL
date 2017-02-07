@@ -1,4 +1,4 @@
-import 'mrdoob/three.js';
+import * as THREE from 'three';
 import { saveAs } from 'file-saver';
 import { fromMesh, mimeType } from 'src/index.js';
 

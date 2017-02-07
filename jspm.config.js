@@ -11,7 +11,7 @@ SystemJS.config({
     "map": {
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.17",
       "file-saver": "npm:file-saver@1.3.3",
-      "mrdoob/three.js": "github:mrdoob/three.js@master"
+      "text": "github:systemjs/plugin-text@0.0.9"
     }
   },
   transpiler: "plugin-babel",
@@ -21,6 +21,18 @@ SystemJS.config({
       "meta": {
         "*.js": {
           "loader": "plugin-babel"
+        }
+      }
+    }
+  },
+  meta: {
+    "three": {
+      "loader": "plugin-babel",
+      "format": "esm",
+      "main": "src/Three.js",
+      "meta": {
+        "*.glsl": {
+          "loader": "text"
         }
       }
     }
@@ -45,6 +57,8 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
+    "three": "github:mrdoob/three.js@r83",
+    "three/core/Geometry": "github:mrdoob/three.js@r83/src/core/Geometry.js",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0"
   },

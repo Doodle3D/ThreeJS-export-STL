@@ -1,3 +1,5 @@
+import { Geometry } from 'three/core/Geometry';
+
 export const mimeType = 'application/vnd.ms-pki.stl';
 
 const LITTLE_ENDIAN = true;
@@ -64,7 +66,7 @@ function geometryToData(geometry, binary) {
 
 export function fromGeometry(geometry, matrix, binary = true) {
   if (geometry.type === 'BufferGeometry') {
-    geometry = new THREE.Geometry().fromBufferGeometry(geometry);
+    geometry = new Geometry().fromBufferGeometry(geometry);
   } else if (geometry.type === 'Geometry') {
     geometry = geometry.clone();
   } else {
