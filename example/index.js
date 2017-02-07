@@ -10,7 +10,7 @@ const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1
 const renderer = new THREE.WebGLRenderer({ canvas });
 
 const geometry = new THREE.BoxGeometry(1, 1, 1).clone();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
