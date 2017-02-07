@@ -25,9 +25,6 @@
   ],
   "author": "casper@doodle3d",
   "license": "MIT",
-  "dependencies": {
-    "jspm": "^0.17.0-beta.32"
-  },
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
@@ -80,5 +77,6 @@
         ]
       }
     }
-  }
+  },
+  "dependencies": {}
 }
