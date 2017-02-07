@@ -6,12 +6,12 @@ Can create both `binary` and `ascii` STL's.
 # Example
 
 ```javascript
-import 'mrdoob/three.js';
-import { saveAs } from 'eligrey/file-saver';
+import * as THREE from 'three';
+import { saveAs } from 'file-saver';
 import * as exportSTL from 'Doodle3D/ThreeJS-export-STL';
 
 const geometry = new THREE.BoxGeometry(1, 1, 1).clone();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
 const mesh = new THREE.Mesh(geometry, material);
 
 mesh.position.y = 0.5;
