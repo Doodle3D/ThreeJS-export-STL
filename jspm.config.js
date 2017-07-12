@@ -38,7 +38,7 @@ SystemJS.config({
     }
   },
   map: {
-    "three/core/Geometry": "npm:three@0.83.0/src/core/Geometry.js"
+    "three/src/core/Geometry": "npm:three@0.83.0/src/core/Geometry.js"
   }
 });
 
