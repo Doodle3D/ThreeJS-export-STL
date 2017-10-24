@@ -1,19 +1,16 @@
 {
   "name": "threejs-export-stl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ThreeJS STL Exporter",
   "main": "lib/index.js",
+  "module": "module/index.js",
+  "esnext": "src/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "postinstall": "jspm install",
-    "build": "babel src --out-dir lib"
+    "build": "npm run build:main && npm run build:module ",
+    "build:main": "BABEL_ENV=main babel src -s -d lib",
+    "build:module": "BABEL_ENV=module babel src -s -d module"
   },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "format": "esm",
   "directories": {
     "lib": "src"
   },
@@ -26,57 +23,11 @@
   "author": "casper@doodle3d",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.5.1",
-    "babel-core": "^6.5.2",
-    "babel-preset-es2015": "^6.5.0",
-    "jspm": "^0.17.0-beta.32"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0"
   },
-  "jspm": {
-    "name": "threejs-export-stl",
-    "main": "index.js",
-    "directories": {
-      "lib": "src"
-    },
-    "dependencies": {
-      "three": "github:mrdoob/three.js@r83"
-    },
-    "devDependencies": {
-      "file-saver": "npm:file-saver@^1.3.3",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.17",
-      "text": "github:systemjs/plugin-text@^0.0.9"
-    },
-    "peerDependencies": {
-      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
-      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
-      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
-      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
-      "events": "npm:jspm-nodelibs-events@^0.2.0",
-      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
-      "os": "npm:jspm-nodelibs-os@^0.2.0",
-      "path": "npm:jspm-nodelibs-path@^0.2.0",
-      "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
-      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
-      "util": "npm:jspm-nodelibs-util@^0.2.0",
-      "vm": "npm:jspm-nodelibs-vm@^0.2.0"
-    },
-    "overrides": {
-      "github:mrdoob/three.js@r83": {
-        "loader": "plugin-babel",
-        "format": "esm",
-        "main": "src/Three.js",
-        "meta": {
-          "*.glsl": {
-            "loader": "text"
-          }
-        }
-      },
-      "npm:inherits@2.0.3": {
-        "ignore": [
-          "test.js"
-        ]
-      }
-    }
-  },
-  "dependencies": {}
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "three": "^0.87.1"
+  }
 }

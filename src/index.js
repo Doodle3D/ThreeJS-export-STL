@@ -1,5 +1,4 @@
-import { Geometry } from 'three/core/Geometry';
-
+import { Geometry } from 'three';
 export const mimeType = 'application/vnd.ms-pki.stl';
 
 const LITTLE_ENDIAN = true;
@@ -65,15 +64,15 @@ function geometryToData(geometry, binary) {
 }
 
 export function fromGeometry(geometry, matrix, binary = true) {
-  if (geometry.type === 'BufferGeometry') {
+  if (geometry.isBufferGeometry) {
     geometry = new Geometry().fromBufferGeometry(geometry);
-  } else if (geometry.type === 'Geometry') {
+  } else if (geometry.isGeometry) {
     geometry = geometry.clone();
   } else {
     throw new Error('Geometry is not an instance of BufferGeometry or Geometry');
   }
 
-  if (matrix) {
+  if (matrix && matrix.isMatrix4) {
     geometry.applyMatrix(matrix);
   }
 

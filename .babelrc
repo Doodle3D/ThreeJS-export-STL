@@ -1,0 +1,14 @@
+{
+  "env": {
+    "module": {
+      "presets": [
+        ["env", {
+          "modules": false
+        }]
+      ]
+    },
+    "main": {
+      "presets": ["env"]
+    }
+  }
+}
