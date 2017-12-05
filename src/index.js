@@ -1,4 +1,5 @@
-import { Geometry } from 'three';
+import { Geometry } from 'three/src/core/Geometry';
+
 export const mimeType = 'application/vnd.ms-pki.stl';
 
 const LITTLE_ENDIAN = true;

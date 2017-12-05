@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 
 node_modules
+=======
+node_modules
+jspm_packages
+example
+>>>>>>> origin/npm

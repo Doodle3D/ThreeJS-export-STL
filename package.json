@@ -1,5 +1,5 @@
 {
-  "name": "threejs-export-stl",
+  "name": "@doodle3d/threejs-export-stl",
   "version": "0.0.4",
   "description": "ThreeJS STL Exporter",
   "main": "lib/index.js",
