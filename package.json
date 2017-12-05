@@ -1,6 +1,6 @@
 {
   "name": "threejs-export-stl",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "ThreeJS STL Exporter",
   "main": "lib/index.js",
   "module": "module/index.js",
@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "babel-preset-env": "^1.6.1",
-    "three": "^0.87.1"
+    "three": "^0.83.0"
   }
 }
