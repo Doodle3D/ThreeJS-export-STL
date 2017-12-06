@@ -1,6 +1,6 @@
 {
   "name": "@doodle3d/threejs-export-stl",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "ThreeJS STL Exporter",
   "main": "lib/index.js",
   "module": "module/index.js",
@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "babel-preset-env": "^1.6.1",
-    "three": "^0.83.0"
+    "three": "^0.88.0"
   }
 }
