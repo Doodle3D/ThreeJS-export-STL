@@ -1,4 +1,4 @@
-import { Geometry } from 'three/src/core/Geometry';
+import { Geometry } from 'three/examples/jsm/deprecated/Geometry.js';
 
 export const mimeType = 'application/vnd.ms-pki.stl';
 
@@ -25,11 +25,11 @@ function geometryToData(geometry, binary) {
 
   let dataView;
   if (binary) {
-    const bufferSize = 84 + (50 * faces.length);
+    const bufferSize = 84 + 50 * faces.length;
     const buffer = new ArrayBuffer(bufferSize);
     dataView = {
       data: new DataView(buffer),
-      offset: 84
+      offset: 84,
     };
 
     dataView.data.setUint32(80, faces.length, LITTLE_ENDIAN);
@@ -39,7 +39,7 @@ function geometryToData(geometry, binary) {
 
   const writeVector = binary ? writeVectorBinary : writeVectorAscii;
 
-  for (let i = 0; i < faces.length; i ++) {
+  for (let i = 0; i < faces.length; i++) {
     writeVector(dataView, faces[i].normal, true);
 
     if (!binary) {
@@ -70,7 +70,9 @@ export function fromGeometry(geometry, matrix, binary = true) {
   } else if (geometry.isGeometry) {
     geometry = geometry.clone();
   } else {
-    throw new Error('Geometry is not an instance of BufferGeometry or Geometry');
+    throw new Error(
+      'Geometry is not an instance of BufferGeometry or Geometry'
+    );
   }
 
   if (matrix && matrix.isMatrix4) {
